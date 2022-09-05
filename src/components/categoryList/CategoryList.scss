@@ -1,0 +1,12 @@
+@import "../../styles/mixins";
+
+.categoryFilter {
+  @include filter;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    @include text(400, 18px, 150%)
+  }
+}

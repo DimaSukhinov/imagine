@@ -1,0 +1,43 @@
+@import "src/styles/mixins";
+
+.pages {
+  display: flex;
+  justify-content: flex-end;
+  margin: 100px 0 150px 0;
+  user-select: none;
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__page {
+    border: 1px solid #DFDFDF;
+    padding: 18px 25px 18px 26px;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    &-active {
+      border: 1px solid #000000;
+      color: #ffffff;
+      background-color: #000000;
+    }
+
+    @media screen and (max-width: 550px) {
+      padding: 9px 16px 9px 17px;
+    }
+  }
+
+  &__info {
+    @include text(600, 18px, 150%);
+    margin-left: 40px;
+    color: #959595;
+
+    @media screen and (max-width: 720px) {
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import "src/styles/mixins";
+
+.footer {
+  background: #000000;
+  color: #ffffff;
+
+  .container {
+    margin: 50px 255px 79px 255px;
+    @include container;
+
+    @include for-laptops(50px 170px 79px 170px);
+    @include for-laptops2(50px 80px 79px 80px);
+    @include for-tablets(50px 20px 40px 20px);
+
+    @media screen and (max-width: 640px) {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    @include text(400, 18px, 150%);
+    cursor: pointer;
+
+    @media screen and (max-width: 640px) {
+      margin-bottom: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__firstBlock {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 640px) {
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 60px;
+  }
+
+  &__secondBlock {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__sites {
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+
+    @media screen and (max-width: 640px) {
+      margin: 0;
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__license {
+    margin-top: 64px;
+    @include text(400, 14px, 150%);
+
+    @media screen and (max-width: 640px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    margin-top: 41px;
+
+    .item {
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+}

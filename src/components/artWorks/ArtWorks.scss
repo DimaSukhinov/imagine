@@ -1,0 +1,56 @@
+@import "src/styles/mixins";
+
+.artWorks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 837px) {
+    justify-content: center;
+  }
+
+  .artWork {
+    position: relative;
+
+    @media screen and (max-width: 837px) {
+      margin-bottom: 20px;
+    }
+
+    & img {
+      width: 330px;
+    }
+
+    &__delete {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    &__author {
+      display: flex;
+      margin-top: 10px;
+
+      & img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .author {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__author {
+    @include text(600, 18px, 150%);
+  }
+
+  &__name {
+    @include text(400, 16px, 150%);
+  }
+}
